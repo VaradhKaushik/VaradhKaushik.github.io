@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Varadh Kaushik"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
@@ -24,7 +24,7 @@ author:
   avatar           : "profile.png"
   name             : "Varadh Kaushik"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "I am Varadh Kaushik, an AI specialist with a Master's degree in Artificial Intelligence from Northeastern University and a Bachelor's degree in Computer Engineering from NMIMS, Mumbai. My expertise includes extensive work with Large Language Models and computer vision. I am actively seeking full-time opportunities to leverage my AI knowledge in innovative and impactful ways."
   location         : "Boston, MA"
   employer         : "Red Brick University"
   uri              : # URL
