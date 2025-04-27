@@ -3,52 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Varadh Kaushik – AI Engineer</title>
+  <title>Varadh Kaushik – Machine Learning Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <img src="assets/headshot.jpg" alt="Varadh Kaushik" class="profile-pic">
-      <h1>Varadh Kaushik</h1>
-      <p class="tagline">Machine Learning Engineer │ AI & LLM Specialist</p>
+  <header>
+    <div class="container header-inner">
+      <div class="profile">
+        <img src="assets/headshot.jpg" alt="Varadh Kaushik" class="profile-pic">
+        <div>
+          <h1>Varadh Kaushik</h1>
+          <p class="tagline">Machine Learning Engineer │ AI &amp; LLM Specialist</p>
+        </div>
+      </div>
       <nav>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section id="about">
+    <section id="about" class="section">
       <h2>About Me</h2>
-      <p><!-- Copy your LinkedIn “About” summary here --></p>
+      <p>
+        I’m a Machine Learning Engineer with an M.S. in Artificial Intelligence from Northeastern University and 5+ years of experience building and deploying large-scale AI systems.  
+        I specialize in HIPAA-compliant LLM pipelines, hierarchical RAG knowledge bases, and scalable anomaly detection for the pharma domain.  
+        Passionate about delivering robust, production-ready AI solutions. :contentReference[oaicite:0]{index=0}&#8203;:contentReference[oaicite:1]{index=1}
+      </p>
+      <a href="assets/Varadh_Kaushik_Resume.pdf" download class="btn">Download Resume</a>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li>
-          <strong>Machine Learning Engineer @ WhizAI</strong><br>
-          Sept 2024 – Present<br>
-          <!-- Brief bullets on responsibilities & achievements -->
-        </li>
-        <li>
-          <strong>ML Technical Intern @ WhizdotAI</strong><br>
-          Jun 2023 – Aug 2023<br>
-          <!-- … -->
-        </li>
-        <!-- Add other roles -->
-      </ul>
+    <section id="experience" class="section">
+      <h2>Professional Experience</h2>
+
+      <div class="experience-item">
+        <h3>Machine Learning Engineer, WhizAI</h3>
+        <div class="date-location">Sept 2024 – Present · Somerset, NJ</div>
+        <ul>
+          <li>HIPAA-Compliant LLM Pipeline: Process 1,000 NLQs/day for pharma dashboards using a quantized LLM (SFT, DPO, ORPO, dynamic logit bias), with automated fallback to a larger model for edge cases—achieving over 99% valid JSON outputs. :contentReference[oaicite:2]{index=2}&#8203;:contentReference[oaicite:3]{index=3}</li>
+          <li>Custom Evaluation &amp; Fallback Logic: Built JSON parse validator, semantic coverage checker, and complexity heuristic with auto-escalation from 7B→70B models to ensure PHI reliability.</li>
+          <li>Hierarchical RAG Knowledge Base: Indexed 3,000+ Confluence pages with LangChain + FAISS; handles 150+ lookups/day in <2 s.</li>
+          <li>Client Engagement &amp; Solution Design: Partnered with pharma clients for requirements gathering, live demos, and iterative model/UI improvements.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Machine Learning Intern, WhizAI</h3>
+        <div class="date-location">Jun 2023 – Aug 2023 · Somerset, NJ</div>
+        <ul>
+          <li>RAG-Powered Help-Desk Chatbot: Built with LangChain, vector embeddings, hierarchical retrieval &amp; reranking—deflected 200+ support tickets/quarter and onboarded 80% of new hires in 3 days.</li>
+          <li>LLM Benchmarking &amp; Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, Flan-T5 under compute constraints; created PEFT datasets for NLQ autocomplete &amp; SQL generation. :contentReference[oaicite:4]{index=4}&#8203;:contentReference[oaicite:5]{index=5}</li>
+          <li>PHI-Safe Dataset Curation: Processed 12K+ anonymized logs for sentence completion &amp; data narration, enabling real-time suggestion pipelines.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Machine Learning Engineer, WhizAI</h3>
+        <div class="date-location">May 2020 – Jul 2022 · Somerset, NJ</div>
+        <ul>
+          <li>Intelligent KPI Monitoring: Engineered multivariate forecasting + ML ensemble with domain-informed breakpoints to track anomalies across pharma KPIs—delivering on-the-fly alerts.</li>
+          <li>Scalable Performance: Containerized forecasting API &amp; ingestion pipelines on Kubernetes, scaling seamlessly to 3× spikes in daily requests. :contentReference[oaicite:6]{index=6}&#8203;:contentReference[oaicite:7]{index=7}</li>
+          <li>Pin Recommendation Engine: Collaborative filtering &amp; metadata ranking on 50K+ events; pilot users added 3 pins/session on average.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Software Development Intern, Technology Against ALS [TAALS]</h3>
+        <div class="date-location">Jun 2019 – Dec 2019 · Mumbai, India</div>
+        <ul>
+          <li>Patented AAC Vision Module: Developed a lightweight CNN for eye-gaze detection on eyewear frames—95% accuracy with <100 ms latency on Android.</li>
+          <li>Edge Deployment &amp; Integration: Containerized TensorFlow Serving on Raspberry Pi with Docker and built an Android companion app. :contentReference[oaicite:8]{index=8}&#8203;:contentReference[oaicite:9]{index=9}</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section">
       <h2>Selected Projects</h2>
       <div class="project">
         <h3>AI-Driven Itinerary Planner</h3>
-        <p>Built with Python, LangChain & Llama2 to generate dynamic travel plans from live hotel data.</p>
+        <p>Python, LangChain &amp; Llama2 to generate dynamic travel plans from live hotel data.</p>
         <a href="https://github.com/VaradhKaushik/travel-planner" target="_blank">View on GitHub</a>
       </div>
       <div class="project">
@@ -56,19 +95,49 @@
         <p>Fine-tuned Stable Diffusion (DreamBooth, LoRA) to produce in-game avatars.</p>
         <a href="https://github.com/VaradhKaushik/AI-Character-Forge" target="_blank">View on GitHub</a>
       </div>
-      <!-- Add more -->
     </section>
 
-    <section id="contact">
+    <section id="skills" class="section">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <strong>Programming</strong>
+          <p>Python, Java, C++, R, SQL, MATLAB, TypeScript</p>
+        </div>
+        <div>
+          <strong>ML Frameworks</strong>
+          <p>TensorFlow, PyTorch, Scikit-learn, ONNX</p>
+        </div>
+        <div>
+          <strong>LLM Tools</strong>
+          <p>HuggingFace, LangChain, FAISS, LlamaIndex, HF Accelerate</p>
+        </div>
+        <div>
+          <strong>MLOps &amp; Deployment</strong>
+          <p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, FastAPI, W&B, DVC</p>
+        </div>
+        <div>
+          <strong>Data &amp; Big Data</strong>
+          <p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p>
+        </div>
+        <div>
+          <strong>Web &amp; Front-End</strong>
+          <p>AngularJS, React, RESTful APIs</p>
+        </div>
+      </div>
+      :contentReference[oaicite:10]{index=10}&#8203;:contentReference[oaicite:11]{index=11}
+    </section>
+
+    <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:kaushik.var@northeastern.edu">kaushik.var@northeastern.edu</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/varadh-kaushik/" target="_blank">/in/varadh-kaushik</a></p>
-      <p>GitHub: <a href="https://github.com/VaradhKaushik" target="_blank">@VaradhKaushik</a></p>
+      <p>📞 +1 (857) 313-0854</p>
+      <p>✉️ <a href="mailto:kaushik.var@northeastern.edu">kaushik.var@northeastern.edu</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/varadh-kaushik/" target="_blank">LinkedIn</a> · <a href="https://github.com/VaradhKaushik" target="_blank">GitHub</a></p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2025 Varadh Kaushik. All rights reserved.</p>
+  <footer class="footer">
+    <p>© 2025 Varadh Kaushik</p>
   </footer>
 </body>
 </html>
