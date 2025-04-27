@@ -5,37 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Varadh Kaushik – Machine Learning Engineer</title>
   <meta name="description" content="Varadh Kaushik – AI & ML Engineer. Architecting scalable AI solutions, HIPAA-compliant LLM pipelines, and enterprise-grade RAG systems.">
-  <meta property="og:title" content="Varadh Kaushik – Machine Learning Engineer">
-  <meta property="og:description" content="Architecting scalable AI solutions, HIPAA-compliant LLM pipelines, and enterprise-grade RAG systems.">
-  <meta property="og:image" content="https://varadhkaushik.github.io/assets/headshot.jpg">
   <link rel="icon" href="assets/logo.svg">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap">
-
   <style>
     :root { --primary-color:#2c3e50; --accent-color:#2980b9; --bg-light:#f9f9f9; --card-bg:#ffffff; --card-shadow:rgba(0,0,0,0.05); --border-radius:8px; --transition:0.3s; }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{font-family:'Open Sans',sans-serif;color:var(--primary-color);background:var(--bg-light);line-height:1.6;}
     h1,h2,h3{font-family:'Montserrat',sans-serif;color:var(--primary-color);margin-bottom:0.5rem;}
-    a{color:var(--accent-color);text-decoration:none;transition:color var(--transition);} a:hover{color:#1f6391;}
+    a{color:var(--accent-color);text-decoration:none;transition:color var(--transition);}a:hover{color:#1f6391;}
     header{background:rgba(44,62,80,0.85);backdrop-filter:blur(10px);padding:1rem 0;position:sticky;top:0;z-index:100;}
     .header-inner{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:0 1rem;}
-    .logo{width:40px;height:40px;background:var(--accent-color);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Montserrat',sans-serif;margin-right:1rem;}
+    .logo{width:40px;height:40px;background:var(--accent-color);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Montserrat',sans-serif;}
     nav a{margin:0 0.5rem;font-weight:600;color:rgba(255,255,255,0.8);font-size:0.9rem;position:relative;padding:0.25rem 0;}
-    nav a::after{content:'';height:2px;background:var(--accent-color);width:0;position:absolute;bottom:-4px;left:0;transition:width var(--transition);} nav a:hover::after,nav a.active::after{width:100%;}
-    .bio{display:flex;flex-wrap:wrap;align-items:center;background:var(--card-bg);border-radius:var(--border-radius);box-shadow:0 4px 6px var(--card-shadow);margin:2rem auto;max-width:1000px;padding:2rem;gap:2rem;}
-    .bio-img{flex-shrink:0;} .bio-img img{width:200px;height:200px;border-radius:50%;object-fit:cover;object-position:center 20%;border:4px solid var(--accent-color);}
-    .bio-content{flex:1;} .bio-content h1{font-size:2rem;margin:0;} .bio-content p.title{font-size:1rem;color:#7f8c8d;margin:0.5rem 0 1rem;} .bio-icons{display:flex;flex-wrap:wrap;gap:1rem;font-size:1rem;} .bio-icons a{display:flex;align-items:center;gap:0.5rem;color:var(--primary-color);} .bio-icons a:hover{color:var(--accent-color);}
-    .section{background:var(--card-bg);border-radius:var(--border-radius);margin:2rem auto;padding:2rem;box-shadow:0 4px 6px var(--card-shadow);opacity:0;transform:translateY(20px);animation:fadeIn 0.6s ease-out forwards;} .section:nth-child(odd){animation-delay:0.2s;} .section:nth-child(even){animation-delay:0.4s;} @keyframes fadeIn{to{opacity:1;transform:translateY(0);}} .section h2{font-size:1.8rem;border-bottom:3px solid var(--accent-color);display:inline-block;padding-bottom:0.5rem;margin-bottom:1rem;}
-    .btn{display:inline-block;background:var(--accent-color);color:white;padding:0.75rem 1.5rem;border-radius:var(--border-radius);font-weight:600;transition:background var(--transition),transform var(--transition);} .btn:hover{background:#1f6391;transform:scale(1.05);}
+    nav a::after{content:'';height:2px;background:var(--accent-color);width:0;position:absolute;bottom:-4px;left:0;transition:width var(--transition);}nav a:hover::after,nav a.active::after{width:100%;}
+    /* Bio Section */
+    .bio{display:flex;flex-wrap:wrap;align-items:flex-start;background:var(--card-bg);border-radius:var(--border-radius);box-shadow:0 4px 6px var(--card-shadow);margin:2rem auto;max-width:1000px;padding:2rem;gap:2rem;}
+    .bio-left{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:1.5rem;}
+    .bio-left img{width:300px;height:300px;border-radius:50%;object-fit:cover;object-position:center 20%;border:4px solid var(--accent-color);}
+    .bio-icons{display:flex;flex-direction:column;gap:0.75rem;}
+    .bio-icons a{display:flex;align-items:center;gap:0.5rem;font-size:1rem;color:var(--primary-color);} .bio-icons a:hover{color:var(--accent-color);}
+    .bio-right{flex:1;}
+    .bio-right h1{font-size:2.5rem;margin:0;}
+    .bio-right p.title{font-size:1.1rem;color:#7f8c8d;margin:0.5rem 0 1rem;}
+    .bio-right h2{font-size:1.8rem;border-bottom:3px solid var(--accent-color);display:inline-block;padding-bottom:0.5rem;margin-bottom:1rem;}
+    .bio-right p.about{font-size:1rem;line-height:1.8;margin-bottom:1rem;}
+    .bio-right .btn{display:inline-block;background:var(--accent-color);color:white;padding:0.75rem 1.5rem;border-radius:var(--border-radius);font-weight:600;transition:background var(--transition),transform var(--transition);} .bio-right .btn:hover{background:#1f6391;transform:scale(1.05);}
+    /* Sections */
+    .section{background:var(--card-bg);border-radius:var(--border-radius);margin:2rem auto;padding:2rem;box-shadow:0 4px 6px var(--card-shadow);opacity:0;transform:translateY(20px);animation:fadeIn 0.6s ease-out forwards;}
+    .section:nth-child(odd){animation-delay:0.2s;} .section:nth-child(even){animation-delay:0.4s;} @keyframes fadeIn{to{opacity:1;transform:translateY(0);}}
+    .section h2{font-size:1.8rem;border-bottom:3px solid var(--accent-color);display:inline-block;padding-bottom:0.5rem;margin-bottom:1rem;}
     .experience-item{position:relative;padding-left:1.5rem;margin-bottom:2rem;border-left:3px solid var(--accent-color);} .experience-item::before{content:'';position:absolute;left:-7px;top:10px;width:14px;height:14px;background:var(--accent-color);border-radius:50%;} .experience-item h3{font-size:1.25rem;margin:0;} .date-location{font-style:italic;font-size:0.9rem;color:#7f8c8d;margin:0.5rem 0;} .experience-item ul{list-style:disc;margin-left:1.2rem;}
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;} .project{background:var(--bg-light);padding:2rem;border-radius:var(--border-radius);box-shadow:0 2px 4px var(--card-shadow);transition:transform var(--transition),box-shadow var(--transition);} .project:hover{transform:translateY(-5px);box-shadow:0 6px 8px var(--card-shadow);} .project h3{margin:0 0 0.5rem;}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;} .skills-grid div{background:var(--bg-light);padding:2rem;border-radius:var(--border-radius);box-shadow:0 2px 4px var(--card-shadow);text-align:center;transition:transform var(--transition),box-shadow var(--transition);} .skills-grid div:hover{transform:translateY(-5px);box-shadow:0 6px 8px var(--card-shadow);}
     .contact-item{display:flex;align-items:center;margin-bottom:0.5rem;} .contact-item .icon{margin-right:0.5rem;font-size:1.2rem;}
-    .footer{ text-align:center;padding:1rem 0;color:#7f8c8d;font-size:0.9rem; }
+    .footer{text-align:center;padding:1rem 0;color:#7f8c8d;font-size:0.9rem;}
   </style>
 </head>
 <body>
@@ -51,13 +56,10 @@
       </nav>
     </div>
   </header>
+
   <section class="bio">
-    <div class="bio-img">
+    <div class="bio-left">
       <img src="assets/headshot.jpg" alt="Photo of Varadh Kaushik">
-    </div>
-    <div class="bio-content">
-      <h1>Varadh Kaushik</h1>
-      <p class="title">Machine Learning Engineer │ AI &amp; LLM Specialist</p>
       <div class="bio-icons">
         <a href="mailto:kaushik.var@northeastern.edu"><span class="icon">✉️</span><span>Email</span></a>
         <a href="https://www.linkedin.com/in/varadh-kaushik/" target="_blank"><span class="icon">🔗</span><span>LinkedIn</span></a>
@@ -65,13 +67,16 @@
         <a href="https://scholar.google.com/citations?user=xVtrLCgAAAAJ&hl=en" target="_blank"><span class="icon">📚</span><span>Scholar</span></a>
       </div>
     </div>
-  </section>
-  <main class="main-container">
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>As a seasoned Machine Learning Engineer with an M.S. in Artificial Intelligence from Northeastern University, I’ve architected and deployed AI-driven solutions that process over 1,000 daily pharmaceutical inquiries with 99% accuracy, powered cutting-edge anomaly detection systems, and built hierarchical RAG knowledge bases at enterprise scale. My expertise spans the full AI lifecycle—from data curation and model fine-tuning to MLOps deployment—ensuring robust, compliant, and scalable performance. I thrive on translating complex research into tangible business impact and continuously optimize AI workflows to drive value.</p>
+    <div class="bio-right">
+      <h1>Varadh Kaushik</h1>
+      <p class="title">Machine Learning Engineer │ AI &amp; LLM Specialist</p>
+      <h2 id="about">About Me</h2>
+      <p class="about">As a seasoned Machine Learning Engineer with an M.S. in Artificial Intelligence from Northeastern University, I’ve architected and deployed AI-driven solutions that process over 1,000 daily pharmaceutical inquiries with 99% accuracy, powered cutting-edge anomaly detection systems, and built hierarchical RAG knowledge bases at enterprise scale. My expertise spans the full AI lifecycle—from data curation and model fine-tuning to MLOps deployment—ensuring robust, compliant, and scalable performance. I thrive on translating complex research into tangible business impact and continuously optimize AI workflows to drive value.</p>
       <a href="assets/Varadh_Kaushik_Resume.pdf" download class="btn">Download Resume</a>
-    </section>
+    </div>
+  </section>
+
+  <main class="main-container">
     <section id="experience" class="section">
       <h2>Professional Experience</h2>
       <div class="experience-item">
@@ -81,33 +86,33 @@
           <li>HIPAA-Compliant LLM Pipeline: Process 1,000 NLQs/day for pharma dashboards using a quantized LLM (SFT, DPO, ORPO, dynamic logit bias), with automated fallback to a larger model—achieving over 99% valid JSON outputs.</li>
           <li>Custom Evaluation &amp; Fallback Logic: Built JSON parse validator, semantic coverage checker, and complexity heuristic with auto-escalation from 7B to 70B models.</li>
           <li>Hierarchical RAG Knowledge Base: Indexed 3,000+ Confluence pages with LangChain &amp; FAISS; 150+ lookups/day in under 2s.</li>
-          <li>Client Engagement &amp; Solution Design: Partnered with pharma clients for requirements gathering, demos, and iterative improvements.</li>
+          <li>Client Engagement &amp;amp; Solution Design: Partnered with pharma clients for requirements gathering, demos, iterative improvements.</li>
         </ul>
       </div>
       <div class="experience-item">
         <h3>Machine Learning Intern, WhizAI</h3>
         <div class="date-location">Jun 2023 – Aug 2023 · Somerset, NJ</div>
         <ul>
-          <li>RAG-Powered Help-Desk Chatbot: Built with LangChain, vector embeddings, hierarchical retrieval &amp; reranking—deflected 200+ tickets/quarter, onboarded 80% new hires in 3d.</li>
-          <li>LLM Benchmarking &amp; Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, Flan-T5 under compute constraints; created PEFT datasets.</li>
-          <li>PHI-Safe Dataset Curation: Processed 12K+ logs for sentence completion &amp; data narration.</li>
+          <li>RAG-Powered Help-Desk Chatbot: Built with LangChain, vector embeddings, hierarchical retrieval &amp;amp; reranking—deflected 200+ tickets/quarter, onboarded 80% new hires in 3d.</li>
+          <li>LLM Benchmarking &amp;amp; Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, Flan-T5 under compute constraints; created PEFT datasets.</li>
+          <li>PHI-Safe Dataset Curation: Processed 12K+ logs for sentence completion &amp;amp; data narration.</li>
         </ul>
       </div>
       <div class="experience-item">
         <h3>Machine Learning Engineer, WhizAI</h3>
         <div class="date-location">May 2020 – Jul 2022 · Somerset, NJ</div>
         <ul>
-          <li>Intelligent KPI Monitoring: Engineered multivariate forecasting &amp; ML ensemble with domain-informed breakpoints.</li>
-          <li>Scalable Performance: Containerized forecasting API &amp; pipelines on Kubernetes; handled 3× daily request spikes.</li>
-          <li>Pin Recommendation Engine: Collaborative filtering &amp; metadata ranking on 50K+ events; 3 pins/session average.</li>
+          <li>Intelligent KPI Monitoring: Engineered multivariate forecasting &amp;amp; ML ensemble with domain-informed breakpoints.</li>
+          <li>Scalable Performance: Containerized forecasting API &amp;amp; pipelines on Kubernetes; handled 3× daily request spikes.</li>
+          <li>Pin Recommendation Engine: Collaborative filtering &amp;amp; metadata ranking on 50K+ events; 3 pins/session average.</li>
         </ul>
       </div>
       <div class="experience-item">
         <h3>Software Development Intern, TAALS</h3>
         <div class="date-location">Jun 2019 – Dec 2019 · Mumbai, India</div>
         <ul>
-          <li>Patented AAC Vision Module: Lightweight CNN for eye-gaze detection—95% accuracy, <100ms latency on Android.</li>
-          <li>Edge Deployment &amp; Integration: Containerized TensorFlow Serving on Raspberry Pi; built Android companion app.</li>
+          <li>Patented AAC Vision Module: Lightweight CNN for eye-gaze detection—95% accuracy, &lt;100ms latency on Android.</li>
+          <li>Edge Deployment &amp;amp; Integration: Containerized TensorFlow Serving on Raspberry Pi; built Android companion app.</li>
         </ul>
       </div>
     </section>
@@ -116,12 +121,12 @@
       <div class="projects-grid">
         <div class="project">
           <h3>AI-Driven Itinerary Planner</h3>
-          <p>Python, LangChain &amp; Llama2 to generate dynamic travel plans from live hotel data.</p>
+          <p>Python, LangChain &amp;amp; Llama2 to generate dynamic travel plans from live hotel data.</p>
           <a href="https://github.com/VaradhKaushik/travel-planner" target="_blank">View on GitHub</a>
         </div>
         <div class="project">
           <h3>Video Game Character Generator</h3>
-          <p>Fine-tuned Stable Diffusion (DreamBooth &amp; LoRA) to produce in-game avatars.</p>
+          <p>Fine-tuned Stable Diffusion (DreamBooth &amp;amp; LoRA) to produce in-game avatars.</p>
           <a href="https://github.com/VaradhKaushik/AI-Character-Forge" target="_blank">View on GitHub</a>
         </div>
       </div>
@@ -132,9 +137,9 @@
         <div><strong>Programming</strong><p>Python, Java, C++, R, SQL, MATLAB, TypeScript</p></div>
         <div><strong>ML Frameworks</strong><p>TensorFlow, PyTorch, Scikit-learn, ONNX</p></div>
         <div><strong>LLM Tools</strong><p>HuggingFace, LangChain, FAISS, LlamaIndex, HF Accelerate</p></div>
-        <div><strong>MLOps &amp; Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, W&B, DVC</p></div>
-        <div><strong>Data &amp; Big Data</strong><p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p></div>
-        <div><strong>Web &amp; Front-End</strong><p>AngularJS, React, RESTful APIs</p></div>
+        <div><strong>MLOps &amp;amp; Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, W&amp;amp;B, DVC</p></div>
+        <div><strong>Data &amp;amp; Big Data</strong><p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p></div>
+        <div><strong>Web &amp;amp; Front-End</strong><p>AngularJS, React, RESTful APIs</p></div>
       </div>
     </section>
     <section id="contact" class="section">
