@@ -18,7 +18,9 @@
       --card-shadow: rgba(0,0,0,0.05);
       --border-radius: 8px;
       --transition: 0.3s;
-      --logo-size: 6px;
+      --social-logo-size: 20px;
+      --company-logo-size: 32px;
+      --education-logo-size: 32px;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -28,61 +30,61 @@
     a:hover { color: #1f6391; }
     header { background: rgba(44,62,80,0.85); backdrop-filter: blur(10px); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
     .header-inner { max-width: 1000px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 0 1rem; }
-    .logo { width: 40px; height: 40px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-family: 'Montserrat', sans-serif; }
+    .logo { width: 40px; height: 40px; background: var(--accent-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
     nav a { margin: 0 0.5rem; font-weight: 600; color: rgba(255,255,255,0.8); font-size: 0.9rem; position: relative; padding: 0.25rem 0; }
     nav a::after { content: ''; height: 2px; background: var(--accent-color); width: 0; position: absolute; bottom: -4px; left: 0; transition: width var(--transition); }
     nav a:hover::after, nav a.active::after { width: 100%; }
-
-    /* Logo sizes */
-    .icon, .company-logo, .education-logo { width: var(--logo-size); height: var(--logo-size); }
+    .main-container { max-width: 1000px; margin: auto; padding: 0 1rem; }
 
     /* Bio Section */
-    .bio { display: flex; flex-wrap: wrap; align-items: flex-start; background: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 6px var(--card-shadow); margin: 2rem auto; max-width: 1000px; padding: 2rem; gap: 2rem; }
-    .bio-left { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+    .bio { display: flex; flex-wrap: wrap; background: var(--card-bg); border-radius: var(--border-radius); box-shadow: 0 4px 6px var(--card-shadow); margin: 2rem auto; max-width: 1000px; padding: 2rem; gap: 2rem; }
+    .bio-left { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
     .bio-left img { width: 300px; height: 300px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 4px solid var(--accent-color); }
-    .bio-icons { display: flex; flex-direction: column; gap: 0.75rem; }
-    .bio-icons a { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; color: var(--primary-color); }
+    .bio-icons { display: flex; flex-direction: column; gap: 0.5rem; }
+    .bio-icons img { width: var(--social-logo-size); height: var(--social-logo-size); }
+    .bio-icons a { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; }
     .bio-icons a:hover { color: var(--accent-color); }
     .bio-right { flex: 1; }
-    .bio-right h1 { font-size: 2.5rem; margin: 0; }
-    .bio-right p.title { font-size: 1.1rem; color: #7f8c8d; margin: 0.5rem 0 1rem; }
-    .bio-right h2 { font-size: 1.8rem; border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-    .bio-right p.about { font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
-    .bio-right .btn { display: inline-block; background: var(--accent-color); color: white; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); font-weight: 600; transition: background var(--transition), transform var(--transition); }
-    .bio-right .btn:hover { background: #1f6391; transform: scale(1.05); }
+    .bio-right h1 { font-size: 2.25rem; margin: 0; }
+    .bio-right p.title { font-size: 1rem; color: #7f8c8d; margin: 0.5rem 0 1rem; }
+    .bio-right h2 { font-size: 1.5rem; border-bottom: 3px solid var(--accent-color); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    .bio-right p.about { font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .bio-right .btn { background: var(--accent-color); color: white; padding: 0.75rem 1.5rem; border-radius: var(--border-radius); font-weight: 600; transition: transform var(--transition); }
+    .bio-right .btn:hover { transform: scale(1.05); }
 
-    /* Section cards */
-    .section { background: var(--card-bg); border-radius: var(--border-radius); margin: 2rem auto; padding: 2rem; box-shadow: 0 4px 6px var(--card-shadow); opacity: 0; transform: translateY(20px); animation: fadeIn 0.6s ease-out forwards; }
+    /* Sections */
+    .section { background: var(--card-bg); border-radius: var(--border-radius); margin: 2rem 0; padding: 2rem; box-shadow: 0 4px 6px var(--card-shadow); opacity: 0; transform: translateY(20px); animation: fadeIn 0.6s ease-out forwards; }
     .section:nth-child(odd) { animation-delay: 0.2s; }
     .section:nth-child(even) { animation-delay: 0.4s; }
     @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-    .section h2 { font-size: 1.8rem; border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    .section h2 { font-size: 1.75rem; border-bottom: 3px solid var(--accent-color); padding-bottom: 0.5rem; margin-bottom: 1rem; }
 
-    /* Experience timeline */
+    /* Experience Timeline */
     .experience-item { position: relative; padding-left: 1.5rem; margin-bottom: 2rem; border-left: 3px solid var(--accent-color); }
-    .experience-item::before { content: ''; position: absolute; left: -7px; top: 10px; width: var(--logo-size); height: var(--logo-size); background: var(--accent-color); border-radius: 50%; }
-    .experience-item h3 { font-size: 1.25rem; margin: 0; display: flex; align-items: center; }
+    .experience-item::before { content: ''; position: absolute; left: -7px; top: 10px; width: var(--company-logo-size); height: var(--company-logo-size); background: var(--accent-color); border-radius: 50%; }
+    .experience-item img.company-logo { width: var(--company-logo-size); height: var(--company-logo-size); margin-right: 0.5rem; }
+    .experience-item h3 { font-size: 1.25rem; display: flex; align-items: center; margin: 0; }
     .date-location { font-style: italic; font-size: 0.9rem; color: #7f8c8d; margin: 0.5rem 0; }
-    .experience-item ul { list-style: disc; margin-left: 1.2rem; }
+    .experience-item ul { margin-left: 1.2rem; list-style: disc; }
 
-    /* Projects grid */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .project { background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow); transition: transform var(--transition), box-shadow var(--transition); }
-    .project:hover { transform: translateY(-5px); box-shadow: 0 6px 8px var(--card-shadow); }
+    /* Projects Grid */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .project { background: var(--bg-light); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow); transition: transform var(--transition); }
+    .project:hover { transform: translateY(-5px); }
     .project h3 { margin: 0 0 0.5rem; }
 
-    /* Skills grid */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-    .skills-grid div { background: var(--bg-light); padding: 2rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow); text-align: center; transition: transform var(--transition), box-shadow var(--transition); }
-    .skills-grid div:hover { transform: translateY(-5px); box-shadow: 0 6px 8px var(--card-shadow); }
+    /* Skills Grid */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .skills-grid div { background: var(--bg-light); padding: 1rem; border-radius: var(--border-radius); box-shadow: 0 2px 4px var(--card-shadow); text-align: center; transition: transform var(--transition); }
+    .skills-grid div:hover { transform: translateY(-5px); }
 
     /* Education */
     .education-list { list-style: none; padding: 0; }
-    .education-list li { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .education-list img.education-logo { width: var(--education-logo-size); height: var(--education-logo-size); margin-right: 0.5rem; }
+    .education-list li { display: flex; align-items: center; margin-bottom: 0.75rem; }
 
     /* Contact */
-    .contact-item { display: flex; align-items: center; margin-bottom: 0.5rem; }
-    .contact-item .icon { margin-right: 0.5rem; font-size: 1.2rem; }
+    .contact-item { display: flex; align-items: center; margin-bottom: 0.5rem; gap: 0.5rem; }
 
     /* Footer */
     .footer { text-align: center; padding: 1rem 0; color: #7f8c8d; font-size: 0.9rem; }
@@ -103,10 +105,111 @@
     </div>
   </header>
 
-  <section class="bio">
+  <section class="bio" id="about">
     <div class="bio-left">
       <img src="assets/headshot.jpg" alt="Photo of Varadh Kaushik">
       <div class="bio-icons">
         <a href="https://www.linkedin.com/in/varadh-kaushik/" target="_blank"><img src="assets/linkedin-logo.png" alt="LinkedIn" class="icon">LinkedIn</a>
         <a href="https://github.com/VaradhKaushik" target="_blank"><img src="assets/github-logo.png" alt="GitHub" class="icon">GitHub</a>
-        <a href="https://scholar.google.com/citations?user=xVtrLCgAAAA
+        <a href="https://scholar.google.com/citations?user=xVtrLCgAAAAJ&hl=en" target="_blank"><img src="assets/scholar-logo.png" alt="Google Scholar" class="icon">Scholar</a>
+        <a href="mailto:kaushik.var@northeastern.edu"><img src="assets/email-logo.png" alt="Email" class="icon">Email</a>
+      </div>
+    </div>
+    <div class="bio-right">
+      <h1>Varadh Kaushik</h1>
+      <p class="title">Machine Learning Engineer │ AI &amp; LLM Specialist</p>
+      <h2>About Me</h2>
+      <p class="about">As a seasoned Machine Learning Engineer with an M.S. in Artificial Intelligence from Northeastern University, I’ve architected and deployed AI-driven solutions that process over 1,000 daily pharmaceutical inquiries with 99% accuracy, powered cutting-edge anomaly detection systems, and built hierarchical RAG knowledge bases at enterprise scale. My expertise spans the full AI lifecycle—from data curation and model fine-tuning to MLOps deployment—ensuring robust, compliant, and scalable performance. I thrive on translating complex research into tangible business impact and continuously optimize AI workflows to drive value.</p>
+      <a href="assets/Varadh_Kaushik_Resume.pdf" download class="btn">Download Resume</a>
+    </div>
+  </section>
+
+  <main class="main-container">
+    <section id="experience" class="section">
+      <h2>Professional Experience</h2>
+      <div class="experience-item">
+        <h3><img src="assets/whizai-logo.png" alt="WhizAI" class="company-logo">Machine Learning Engineer, WhizAI</h3>
+        <div class="date-location">Sept 2024 – Present · Somerset, NJ</div>
+        <ul>
+          <li>HIPAA-Compliant LLM Pipeline: Process 1,000 NLQs/day for pharma dashboards using a quantized LLM (SFT, DPO, ORPO, dynamic logit bias), with automated fallback to a larger model—achieving over 99% valid JSON outputs.</li>
+          <li>Custom Evaluation &amp;amp; Fallback Logic: Built JSON parse validator, semantic coverage checker, and complexity heuristic with auto-escalation from 7B to 70B quantized models or legacy systems.</li>
+          <li>Hierarchical RAG Knowledge Base: Deployed across 3,000 Confluence pages with LangChain &amp;amp; FAISS; handles 150+ internal lookups/day at under 2s latency.</li>
+          <li>Client Engagement &amp;amp; Solution Design: Partnered with pharma customers to gather requirements, deliver live demos, and drive iterative improvements.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3><img src="assets/whizai-logo.png" alt="WhizAI" class="company-logo">Machine Learning Intern, WhizAI</h3>
+        <div class="date-location">Jun 2023 – Aug 2023 · Somerset, NJ</div>
+        <ul>
+          <li>RAG-Powered Help-Desk Chatbot: Built with LangChain, vector embeddings, hierarchical retrieval &amp;amp; reranking—deflected 200+ support tickets/quarter and onboarded 80% of new hires within 3 days.</li>
+          <li>LLM Benchmarking &amp;amp; Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, Flan-T5; created PEFT datasets powering NLQ autocomplete &amp;amp; SQL generation in production.</li>
+          <li>PHI-Safe Dataset Curation: Processed 12K+ anonymized logs for sentence completion and data narration tasks.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3><img src="assets/whizai-logo.png" alt="WhizAI" class="company-logo">Machine Learning Engineer, WhizAI (Early Career)</h3>
+        <div class="date-location">May 2020 – Jul 2022 · Somerset, NJ</div>
+        <ul>
+          <li>Intelligent KPI Monitoring: Engineered multivariate forecasting &amp;amp; ML ensemble with domain-informed breakpoints to track anomalies across pharma KPIs.</li>
+          <li>Scalable Performance: Orchestrated anomaly-detector, forecasting API, &amp;amp; ingestion pipelines on Kubernetes—handling 3× spikes with no downtime.</li>
+          <li>Pin Recommendation Engine: Collaborative filtering &amp;amp; metadata ranking on 50K+ events; pilot users added 3 pins/session on average.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3><img src="assets/taals-logo.png" alt="TAALS" class="company-logo">Software Development Intern, TAALS</h3>
+        <div class="date-location">Jun 2019 – Dec 2019 · Mumbai, India</div>
+        <ul>
+          <li>Patented AAC Vision Module: Developed lightweight CNN for eye-gaze detection—95% accuracy with sub-100ms latency on Android.</li>
+          <li>Edge Deployment &amp;amp; Integration: Containerized TensorFlow Serving on Raspberry Pi; built Android companion app.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Selected Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>AI-Driven Itinerary Planner</h3>
+          <p>Python, LangChain &amp;amp; Llama2 to generate dynamic travel plans from live hotel APIs.</p>
+          <a href="https://github.com/VaradhKaushik/travel-planner" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+          <h3>Video Game Character Generator</h3>
+          <p>Fine-tuned Stable Diffusion (DreamBooth &amp;amp; LoRA) for custom in-game avatar creation.</p>
+          <a href="https://github.com/VaradhKaushik/AI-Character-Forge" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div><strong>Programming</strong><p>Python, Java, C++, R, SQL, MATLAB, TypeScript</p></div>
+        <div><strong>ML Frameworks</strong><p>TensorFlow, PyTorch, Scikit-learn, ONNX</p></div>
+        <div><strong>LLM Tools</strong><p>HuggingFace, LangChain, FAISS, LlamaIndex, HF Accelerate</p></div>
+        <div><strong>MLOps &amp;amp; Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, W&B, DVC</p></div>
+        <div><strong>Data &amp;amp; Big Data</strong><p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p></div>
+        <div><strong>Web &amp;amp; Front-End</strong><p>AngularJS, React, RESTful APIs</p></div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <ul class="education-list">
+        <li><img src="assets/northeastern-logo.png" alt="Northeastern University" class="education-logo">M.S. in Artificial Intelligence, Northeastern University (May 2024)</li>
+        <li><img src="assets/nmims-logo.png" alt="NMIMS" class="education-logo">B.Tech. in Computer Engineering, NMIMS (May 2022)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="contact-item">📞 +1 (857) 313-0854</p>
+      <p class="contact-item">✉️ <a href="mailto:kaushik.var@northeastern.edu">kaushik.var@northeastern.edu</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Varadh Kaushik</p>
+  </footer>
+</body>
+</html>
