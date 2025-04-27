@@ -48,12 +48,14 @@
       display: flex;
       align-items: center;
     }
+    /* Updated: control crop positioning */
     .profile-pic {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       border: 2px solid white;
-      object-fit: cover;
+      object-fit: cover;            /* fill the circle */
+      object-position: center top;  /* shift crop to show upper part */
       margin-right: 1rem;
     }
     header h1 {
@@ -253,7 +255,7 @@
         <div><strong>Programming</strong><p>Python, Java, C++, R, SQL, MATLAB, TypeScript</p></div>
         <div><strong>ML Frameworks</strong><p>TensorFlow, PyTorch, Scikit-learn, ONNX</p></div>
         <div><strong>LLM Tools</strong><p>HuggingFace, LangChain, FAISS, LlamaIndex, HF Accelerate</p></div>
-        <div><strong>MLOps & Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, FastAPI, Weights & Biases, DVC</p></div>
+        <div><strong>MLOps & Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, Weights & Biases, DVC</p></div>
         <div><strong>Data & Big Data</strong><p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p></div>
         <div><strong>Web & Front-End</strong><p>AngularJS, React, RESTful APIs</p></div>
       </div>
