@@ -7,7 +7,7 @@
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap">
 
   <style>
     :root {
@@ -17,155 +17,121 @@
       --card-bg: #ffffff;
       --card-shadow: rgba(0,0,0,0.1);
       --border-radius: 8px;
+      --transition: 0.3s;
     }
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
     html { scroll-behavior: smooth; }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
       color: var(--primary-color);
       background: var(--bg-light);
+      line-height: 1.6;
     }
-    a { color: var(--accent-color); text-decoration: none; transition: color 0.3s; }
-    a:hover { color: #1a5276; }
+    h1,h2,h3 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); }
+    a { color: var(--accent-color); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: #1f6391; }
 
     /* Header */
     header {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      background: linear-gradient(135deg, #34495e, #2c3e50);
+      padding: 1.5rem 0;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
     }
     .header-inner {
       max-width: 900px;
       margin: auto;
-      padding: 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 1rem;
     }
     .profile {
       display: flex;
       align-items: center;
     }
-    /* Updated: control crop positioning */
     .profile-pic {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid white;
-      object-fit: cover;            /* fill the circle */
-      object-position: center top;  /* shift crop to show upper part */
+      width: 80px; height: 80px;
+      border-radius: 50%; border: 2px solid white;
+      object-fit: cover; object-position: center top;
       margin-right: 1rem;
     }
-    header h1 {
-      color: white;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-    .tagline {
-      color: #ecf0f1;
-      font-weight: 300;
-      margin: 0;
-    }
-    nav a {
-      margin: 0 0.5rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.8);
-    }
+    header h1 { color: white; font-size: 1.8rem; margin:0; }
+    .tagline { color: #ecf0f1; font-weight:300; margin:0; }
+    nav a { margin: 0 0.5rem; font-weight:600; color: rgba(255,255,255,0.8); }
     nav a:hover { color: white; }
-    @media (max-width: 600px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        margin-top: 0.5rem;
-      }
-      nav a {
-        display: block;
-        margin: 0.25rem 0;
-      }
+    @media (max-width:600px) {
+      .header-inner { flex-direction:column; align-items:flex-start; }
+      nav { margin-top:0.5rem; }
+      nav a { display:block; margin:0.3rem 0; }
     }
 
-    /* Main container and sections */
-    .main-container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
+    /* Section Animations & Layout */
+    .main-container { max-width:900px; margin:auto; padding:2rem 1rem; }
     .section {
       background: var(--card-bg);
       border-radius: var(--border-radius);
-      padding: 2rem;
       margin: 2rem 0;
+      padding: 2rem;
       box-shadow: 0 4px 6px var(--card-shadow);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    .section:nth-child(odd) { animation-delay: 0.2s; }
+    .section:nth-child(even) { animation-delay: 0.4s; }
+    @keyframes fadeIn {
+      to { opacity:1; transform:translateY(0); }
     }
     .section h2 {
-      border-bottom: 3px solid var(--accent-color);
-      display: inline-block;
-      padding-bottom: 0.5rem;
-      color: var(--accent-color);
-      margin-bottom: 1rem;
-      font-weight: 600;
-      margin: 0;
+      font-size:1.6rem; margin-bottom:1rem;
+      border-bottom:3px solid var(--accent-color);
+      display:inline-block; padding-bottom:0.5rem;
     }
 
-    /* Buttons */
+    /* About */
+    #about p { font-size:1rem; line-height:1.8; }
+
+    /* Download Button */
     .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent-color);
-      color: white;
-      border-radius: var(--border-radius);
-      font-weight: 600;
-      transition: background 0.3s;
-      margin-top: 1rem;
+      display:inline-block; margin-top:1rem;
+      background: var(--accent-color); color:white;
+      padding:0.75rem 1.5rem; border-radius:var(--border-radius);
+      font-weight:600; transition: background var(--transition);
     }
-    .btn:hover { background: #1f6391; }
+    .btn:hover { background:#1f6391; }
 
-    /* Experience and projects */
-    .experience-item, .project {
-      margin-bottom: 1.5rem;
+    /* Experience Timeline */
+    .experience-item {
+      position:relative; padding-left:1.5rem; margin-bottom:2rem;
+      border-left:3px solid var(--accent-color);
     }
-    .experience-item h3, .project h3 {
-      margin: 0 0 0.25rem 0;
-      font-size: 1.2rem;
+    .experience-item:before {
+      content:''; position:absolute; left:-7px; top:8px;
+      width:14px; height:14px;
+      background: var(--accent-color); border-radius:50%;
     }
-    .date-location {
-      font-style: italic;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-      color: #7f8c8d;
-    }
-    .experience-item ul {
-      list-style: disc;
-      margin-left: 1.5rem;
-    }
+    .experience-item h3 { margin-bottom:0.25rem; font-size:1.2rem; }
+    .date-location { font-style:italic; font-size:0.9rem; color:#7f8c8d; margin-bottom:0.5rem; }
+    .experience-item ul { margin-left:1.2rem; list-style:disc; }
 
-    /* Skills grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .skills-grid div {
-      background: var(--bg-light);
-      padding: 1rem;
-      border-radius: var(--border-radius);
-      text-align: center;
-      box-shadow: 0 2px 4px var(--card-shadow);
-    }
+    /* Projects Grid */
+    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; }
+    .project { background: var(--bg-light); padding:1.5rem; border-radius:var(--border-radius);
+               box-shadow:0 2px 4px var(--card-shadow); transition: transform var(--transition), box-shadow var(--transition); }
+    .project:hover { transform: translateY(-5px); box-shadow:0 6px 8px var(--card-shadow); }
+    .project h3 { margin-bottom:0.5rem; }
+
+    /* Skills Grid */
+    .skills-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem; }
+    .skills-grid div { background: var(--bg-light); padding:1rem; border-radius:var(--border-radius);
+                         box-shadow:0 2px 4px var(--card-shadow); text-align:center;
+                         transition: transform var(--transition), box-shadow var(--transition); }
+    .skills-grid div:hover { transform:translateY(-5px); box-shadow:0 6px 8px var(--card-shadow); }
 
     /* Footer */
-    .footer {
-      text-align: center;
-      padding: 1rem 0;
-      color: #7f8c8d;
-      font-size: 0.9rem;
-      background: var(--bg-light);
-      margin-top: 2rem;
-    }
+    .footer { text-align:center; padding:1rem 0; color:#7f8c8d; font-size:0.9rem; margin-top:2rem; }
   </style>
 </head>
 <body>
@@ -175,8 +141,8 @@
         <img src="assets/headshot.jpg" alt="Varadh Kaushik" class="profile-pic">
         <div>
           <h1>Varadh Kaushik</h1>
-          <p class="tagline">Machine Learning Engineer │ AI & LLM Specialist</p>
-        </div>
+          <p class="tagline">Machine Learning Engineer │ AI &amp; LLM Specialist</p>
+        <//div>
       </div>
       <nav>
         <a href="#about">About</a>
@@ -202,9 +168,9 @@
         <div class="date-location">Sept 2024 – Present · Somerset, NJ</div>
         <ul>
           <li>HIPAA-Compliant LLM Pipeline: Process 1,000 NLQs/day for pharma dashboards using a quantized LLM (SFT, DPO, ORPO, dynamic logit bias), with automated fallback to a larger model for edge cases—achieving over 99% valid JSON outputs.</li>
-          <li>Custom Evaluation & Fallback Logic: Built JSON parse validator, semantic coverage checker, and complexity heuristic with auto-escalation from 7B to 70B models to ensure PHI reliability.</li>
+          <li>Custom Evaluation &amp; Fallback Logic: Built JSON parse validator, semantic coverage checker, and complexity heuristic with auto-escalation from 7B to 70B models to ensure PHI reliability.</li>
           <li>Hierarchical RAG Knowledge Base: Indexed 3,000+ Confluence pages with LangChain and FAISS; handles 150+ lookups/day in under 2s.</li>
-          <li>Client Engagement & Solution Design: Partnered with pharma clients for requirements gathering, live demos, and iterative model/UI improvements.</li>
+          <li>Client Engagement &amp; Solution Design: Partnered with pharma clients for requirements gathering, live demos, and iterative model/UI improvements.</li>
         </ul>
       </div>
       <div class="experience-item">
@@ -212,7 +178,7 @@
         <div class="date-location">Jun 2023 – Aug 2023 · Somerset, NJ</div>
         <ul>
           <li>RAG-Powered Help-Desk Chatbot: Built with LangChain, vector embeddings, hierarchical retrieval and reranking—deflected 200+ support tickets per quarter and onboarded 80% of new hires in 3 days.</li>
-          <li>LLM Benchmarking & Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, and Flan-T5 under compute constraints; created PEFT datasets for NLQ autocomplete and context-aware SQL generation.</li>
+          <li>LLM Benchmarking &amp; Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, and Flan-T5 under compute constraints; created PEFT datasets for NLQ autocomplete and context-aware SQL generation.</li>
           <li>PHI-Safe Dataset Curation: Processed 12K+ anonymized logs for sentence completion and data narration, enabling real-time suggestion pipelines.</li>
         </ul>
       </div>
@@ -230,22 +196,24 @@
         <div class="date-location">Jun 2019 – Dec 2019 · Mumbai, India</div>
         <ul>
           <li>Patented AAC Vision Module: Developed a lightweight CNN for eye-gaze detection—95% accuracy with under 100ms latency on Android devices.</li>
-          <li>Edge Deployment & Integration: Containerized TensorFlow Serving on Raspberry Pi and built an Android companion app.</li>
+          <li>Edge Deployment &amp; Integration: Containerized TensorFlow Serving on Raspberry Pi and built an Android companion app.</li>
         </ul>
       </div>
     </section>
 
     <section id="projects" class="section">
       <h2>Selected Projects</h2>
-      <div class="project">
-        <h3>AI-Driven Itinerary Planner</h3>
-        <p>Python, LangChain, and Llama2 to generate dynamic travel plans from live hotel data.</p>
-        <a href="https://github.com/VaradhKaushik/travel-planner" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project">
-        <h3>Video Game Character Generator</h3>
-        <p>Fine-tuned Stable Diffusion (DreamBooth and LoRA) to produce in-game avatars.</p>
-        <a href="https://github.com/VaradhKaushik/AI-Character-Forge" target="_blank">View on GitHub</a>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>AI-Driven Itinerary Planner</h3>
+          <p>Python, LangChain, and Llama2 to generate dynamic travel plans from live hotel data.</p>
+          <a href="https://github.com/VaradhKaushik/travel-planner" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+          <h3>Video Game Character Generator</h3>
+          <p>Fine-tuned Stable Diffusion (DreamBooth and LoRA) to produce in-game avatars.</p>
+          <a href="https://github.com/VaradhKaushik/AI-Character-Forge" target="_blank">View on GitHub</a>
+        </div>
       </div>
     </section>
 
@@ -255,9 +223,9 @@
         <div><strong>Programming</strong><p>Python, Java, C++, R, SQL, MATLAB, TypeScript</p></div>
         <div><strong>ML Frameworks</strong><p>TensorFlow, PyTorch, Scikit-learn, ONNX</p></div>
         <div><strong>LLM Tools</strong><p>HuggingFace, LangChain, FAISS, LlamaIndex, HF Accelerate</p></div>
-        <div><strong>MLOps & Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, Weights & Biases, DVC</p></div>
-        <div><strong>Data & Big Data</strong><p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p></div>
-        <div><strong>Web & Front-End</strong><p>AngularJS, React, RESTful APIs</p></div>
+        <div><strong>MLOps &amp; Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, Weights & Biases, DVC</p></div>
+        <div><strong>Data &amp; Big Data</strong><p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p></div>
+        <div><strong>Web &amp; Front-End</strong><p>AngularJS, React, RESTful APIs</p></div>
       </div>
     </section>
 
