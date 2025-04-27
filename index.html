@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Varadh Kaushik – Machine Learning Engineer</title>
+  <meta name="description" content="Varadh Kaushik – AI & ML Engineer. Architecting scalable AI solutions, HIPAA-compliant LLM pipelines, and enterprise-grade RAG systems.">
+  <meta property="og:title" content="Varadh Kaushik – Machine Learning Engineer">
+  <meta property="og:description" content="Architecting scalable AI solutions, HIPAA-compliant LLM pipelines, and enterprise-grade RAG systems.">
+  <meta property="og:image" content="https://varadhkaushik.github.io/assets/headshot.jpg">
+  <link rel="icon" href="assets/logo.svg">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +32,7 @@
       background: var(--bg-light);
       line-height: 1.6;
     }
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; color: var(--primary-color); }
     a { color: var(--accent-color); text-decoration: none; transition: color var(--transition); }
     a:hover { color: #1f6391; }
 
@@ -48,6 +53,18 @@
       justify-content: space-between;
       padding: 0 1rem;
     }
+    .logo {
+      width: 40px; height: 40px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      margin-right: 1rem;
+    }
     .profile {
       display: flex;
       align-items: center;
@@ -66,6 +83,7 @@
       color: rgba(255,255,255,0.8);
       font-size: 0.9rem;
       position: relative;
+      padding: 0.25rem 0;
     }
     nav a::after {
       content: '';
@@ -81,7 +99,7 @@
 
     /* Hero Section */
     .hero {
-      height: 60vh;
+      min-height: 60vh;
       background: linear-gradient(135deg, #2980b9, #2c3e50);
       display: flex;
       align-items: center;
@@ -91,9 +109,9 @@
       padding: 0 1rem;
     }
     .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
     .hero .btn { background: white; color: var(--primary-color); }
-    .hero .btn:hover { background: #ecf0f1; }
+    .hero .btn:hover { background: #ecf0f1; transform: scale(1.05); }
 
     /* Main container */
     .main-container { max-width: 1000px; margin: auto; padding: 2rem 1rem; }
@@ -146,7 +164,7 @@
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
     .project {
       background: var(--bg-light);
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: var(--border-radius);
       box-shadow: 0 2px 4px var(--card-shadow);
       transition: transform var(--transition), box-shadow var(--transition);
@@ -158,7 +176,7 @@
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
     .skills-grid div {
       background: var(--bg-light);
-      padding: 1rem;
+      padding: 2rem;
       border-radius: var(--border-radius);
       box-shadow: 0 2px 4px var(--card-shadow);
       text-align: center;
@@ -167,7 +185,8 @@
     .skills-grid div:hover { transform: translateY(-5px); box-shadow: 0 6px 8px var(--card-shadow); }
 
     /* Contact */
-    .contact-item { margin-bottom: 0.5rem; }
+    .contact-item { margin-bottom: 0.5rem; display: flex; align-items: center; }
+    .contact-item .icon { margin-right: 0.5rem; font-size: 1.2rem; }
 
     /* Footer */
     .footer { text-align: center; padding: 1rem 0; color: #7f8c8d; font-size: 0.9rem; }
@@ -175,15 +194,16 @@
 </head>
 <body>
   <header>
-    <div class="header-inner">
+    <div class="header-inner" role="banner">
+      <div class="logo" aria-label="VK Logo">VK</div>
       <div class="profile">
-        <img src="assets/headshot.jpg" alt="Varadh Kaushik" class="profile-pic">
+        <img src="assets/headshot.jpg" alt="Photo of Varadh Kaushik" class="profile-pic">
         <div>
           <h1>Varadh Kaushik</h1>
-          <p class="tagline">Machine Learning Engineer │ AI &amp; LLM Specialist</p>
-        <//div>
+          <p class="tagline">AI systems that scale & drive ROI</p>
+        </div>
       </div>
-      <nav>
+      <nav aria-label="Main Navigation">
         <a href="#about" class="active">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
@@ -214,9 +234,9 @@
         <div class="date-location">Sept 2024 – Present · Somerset, NJ</div>
         <ul>
           <li>HIPAA-Compliant LLM Pipeline: Process 1,000 NLQs/day for pharma dashboards using a quantized LLM (SFT, DPO, ORPO, dynamic logit bias), with automated fallback to a larger model for edge cases—achieving over 99% valid JSON outputs.</li>
-          <li>Custom Evaluation &amp;amp; Fallback Logic: Built JSON parse validator, semantic coverage checker, and complexity heuristic with auto-escalation from 7B to 70B models to ensure PHI reliability.</li>
+          <li>Custom Evaluation &amp; Fallback Logic: Built JSON parse validator, semantic coverage checker, and complexity heuristic with auto-escalation from 7B to 70B models to ensure PHI reliability.</li>
           <li>Hierarchical RAG Knowledge Base: Indexed 3,000+ Confluence pages with LangChain and FAISS; handles 150+ lookups/day in under 2s.</li>
-          <li>Client Engagement &amp;amp; Solution Design: Partnered with pharma clients for requirements gathering, live demos, and iterative model/UI improvements.</li>
+          <li>Client Engagement &amp; Solution Design: Partnered with pharma clients for requirements gathering, live demos, and iterative model/UI improvements.</li>
         </ul>
       </div>
       <div class="experience-item">
@@ -224,7 +244,7 @@
         <div class="date-location">Jun 2023 – Aug 2023 · Somerset, NJ</div>
         <ul>
           <li>RAG-Powered Help-Desk Chatbot: Built with LangChain, vector embeddings, hierarchical retrieval and reranking—deflected 200+ support tickets per quarter and onboarded 80% of new hires in 3 days.</li>
-          <li>LLM Benchmarking &amp;amp; Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, and Flan-T5 under compute constraints; created PEFT datasets for NLQ autocomplete and context-aware SQL generation.</li>
+          <li>LLM Benchmarking &amp; Fine-Tuning: Evaluated ChatGPT, Claude, Falcon, LLaMA, and Flan-T5 under compute constraints; created PEFT datasets for NLQ autocomplete and context-aware SQL generation.</li>
           <li>PHI-Safe Dataset Curation: Processed 12K+ anonymized logs for sentence completion and data narration, enabling real-time suggestion pipelines.</li>
         </ul>
       </div>
@@ -242,7 +262,7 @@
         <div class="date-location">Jun 2019 – Dec 2019 · Mumbai, India</div>
         <ul>
           <li>Patented AAC Vision Module: Developed a lightweight CNN for eye-gaze detection—95% accuracy with under 100ms latency on Android devices.</li>
-          <li>Edge Deployment &amp;amp; Integration: Containerized TensorFlow Serving on Raspberry Pi and built an Android companion app.</li>
+          <li>Edge Deployment &amp; Integration: Containerized TensorFlow Serving on Raspberry Pi and built an Android companion app.</li>
         </ul>
       </div>
     </section>
@@ -269,7 +289,7 @@
         <div><strong>Programming</strong><p>Python, Java, C++, R, SQL, MATLAB, TypeScript</p></div>
         <div><strong>ML Frameworks</strong><p>TensorFlow, PyTorch, Scikit-learn, ONNX</p></div>
         <div><strong>LLM Tools</strong><p>HuggingFace, LangChain, FAISS, LlamaIndex, HF Accelerate</p></div>
-        <div><strong>MLOps &amp; Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, Weights & Biases, DVC</p></div>
+        <div><strong>MLOps &amp; Deployment</strong><p>Docker, Kubernetes, AWS SageMaker, GCP Vertex AI, MLFlow, Weights &amp; Biases, DVC</p></div>
         <div><strong>Data &amp; Big Data</strong><p>Spark, Pandas, NumPy, Pinecone, Chroma, PostgreSQL</p></div>
         <div><strong>Web &amp; Front-End</strong><p>AngularJS, React, RESTful APIs</p></div>
       </div>
@@ -277,14 +297,30 @@
 
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p class="contact-item">📞 +1 (857) 313-0854</p>
-      <p class="contact-item">✉️ <a href="mailto:kaushik.var@northeastern.edu">kaushik.var@northeastern.edu</a></p>
-      <p class="contact-item">🔗 <a href="https://www.linkedin.com/in/varadh-kaushik/" target="_blank">LinkedIn</a> · <a href="https://github.com/VaradhKaushik" target="_blank">GitHub</a></p>
+      <p class="contact-item"><span class="icon">📞</span> +1 (857) 313-0854</p>
+      <p class="contact-item"><span class="icon">✉️</span> <a href="mailto:kaushik.var@northeastern.edu">kaushik.var@northeastern.edu</a></p>
+      <p class="contact-item"><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/varadh-kaushik/" target="_blank">LinkedIn</a> &middot; <a href="https://github.com/VaradhKaushik" target="_blank">GitHub</a></p>
     </section>
   </main>
 
   <footer class="footer">
     <p>© 2025 Varadh Kaushik</p>
   </footer>
+
+  <script>
+    // Scroll-spy: highlight nav links based on scroll position
+    const sections = document.querySelectorAll('section[id');
+    const navLinks = document.querySelectorAll('nav a');
+    function onScroll() {
+      const scrollPos = window.scrollY + window.innerHeight/3;
+      sections.forEach(section => {
+        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          document.querySelector(`nav a[href*="${section.id}"]`).classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll);
+  </script>
 </body>
 </html>
